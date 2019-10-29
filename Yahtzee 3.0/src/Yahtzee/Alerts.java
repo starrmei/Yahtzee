@@ -141,7 +141,6 @@ public class Alerts extends Application {
 	    Button btnClose = (Button) alEnd.getDialogPane().lookupButton(ButtonType.CANCEL);
 	    btnClose.setText("Close");
 	    Optional<ButtonType> result = alEnd.showAndWait();
-	    //alEnd.showAndWait();
 		
 		if (result.get() == null) {
 	    	System.exit(0);
@@ -150,6 +149,7 @@ public class Alerts extends Application {
 	    //Start hit
 	    else if (result.get() == ButtonType.OK) {	
 		    gameplay.reset();
+		    getStart();
 		    
 	    }
 	    else if(result.get() == ButtonType.CANCEL) {
