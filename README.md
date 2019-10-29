@@ -1,5 +1,4 @@
 ## Yahtzee
-Code to run Yahtzee game using JavaFX.
 
 ### Getting Started
 Download all files and run Alerts.java to play
