@@ -86,7 +86,6 @@ public class Gameplay extends Application {
 	
 	protected GridPane getGrid() {
 		//CREATE GRID PANE
-		//GridPane gridPane = new GridPane();
 		//Set gaps between columns and rows
 		gridPane.setHgap(80);
 		gridPane.setVgap(15);
@@ -142,28 +141,10 @@ public class Gameplay extends Application {
 				
 		//Other
 		gridPane.add(lTitle, 3, 0);
-		//gridPane.add(btnStart, 0, 11);
-		//gridPane.add(btnSubmit, 6, 9);
 		gridPane.add(btnSubmit, 6, 11);
 		gridPane.add(btnRoll, 0, 11);
-		//gridPane.add(lTurn, 0, 14);
-		//gridPane.add(lUpperScore, 0, 14);
-		//gridPane.add(lRoll, 3, 14);
 		gridPane.add(lRoll, 0, 14);
 		gridPane.add(lScore, 6, 14);
-		
-		/*
-		//Test Yahtzee and End
-		gridPane.add(Y, 0, 0);
-		Y.setOnAction(e -> makeYahtzee());
-		gridPane.add(E, 6, 0);
-		E.setOnAction(e -> turn = 12);
-		*/
-		
-		/*
-		//Start & Restart
-		btnStart.setOnAction(e -> getGame());
-		*/
 		
 		//Rerolls and Holds
 		btnRoll.setOnAction(e -> roll());
@@ -385,15 +366,15 @@ public class Gameplay extends Application {
 			    	//Check additional Yahtzee
 			    	checkAdditionalYahtzee();
 			    	
-					//Update Score
-					lScore.setText("Score: " + score);
+				//Update Score
+				lScore.setText("Score: " + score);
 					
 			    	//Check if end of game
-					if (turn > 13) {
-						Alerts.getEnd();
-					}
+				if (turn > 13) {
+					Alerts.getEnd();
+				}
 					
-					//reset the holds and start next turn
+				//reset the holds and start next turn
 			    	resetCB();
 			    	roll();
 			    }
@@ -818,7 +799,27 @@ public class Gameplay extends Application {
 	
 	public void reset() {
 		gridPane.setDisable(false);
-		getGame();
+		rbOnes.setDisable(false);
+		rbTwos.setDisable(false);
+		rbThrees.setDisable(false);
+		rbFours.setDisable(false);
+		rbFives.setDisable(false);
+		rbSixes.setDisable(false);
+		rbKind3.setDisable(false);
+		rbKind4.setDisable(false);
+		rbFH.setDisable(false);
+		rbSS.setDisable(false);
+		rbLS.setDisable(false);
+		rbYahtzee.setDisable(false);
+		rbChance.setDisable(false);
+		upperScore = 0;
+		lBonus.setText("Bonus: NO - Current: " + upperScore + "/63");
+		score = 0;
+		lScore.setText("Score: " + score);
+		lYahtzee.setText("Additonal Yahtzee: NO");
+		turn = 1;
+		
+		//getGame();
 	}
 	
 	public static void main(String[] args) {
